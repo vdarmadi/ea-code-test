@@ -33,7 +33,7 @@ I chose to implement the solution using:
 ![image info](./design.png)
 
 ## Further work to do to make it production ready
-- Add more exception handlings, logging and monitoring library e.g. `Sentry`
+- Add more exception handlings, logging and monitoring service e.g. `Sentry`
 - Add the script to orchestration / data pipeline tool such as `Apache Airflow` to enable scheduling
 - Put the input CSV in S3 or remote location
 - Upload the result files to S3 or database tables

@@ -3,7 +3,6 @@ import pandas as pd
 print("Script Start")
 
 df = pd.read_csv("./bank_enriched_addresses.csv")
-df.head()
 
 # a. Remove all rows where pdays is -1
 df = df.query('pdays != -1')
@@ -49,8 +48,6 @@ df = df.rename(columns={"y": "outcome"})
 # a. “water”, where the address contains e.g. lake, creek
 # b. “relief”, where the address contains e.g. hill, canyon
 # c. “flat”, where the address contains e.g. plain
-
-
 def categorize_geographical_feature(address):
     address = address.lower()
     if any(keyword in address for keyword in ["lake", "creek", "river"]):
@@ -62,9 +59,7 @@ def categorize_geographical_feature(address):
     else:
         return "unknown"
 
-
 df["geographical_feature"] = df["address"].apply(categorize_geographical_feature)
-
 
 # Group by the feature (if you created it, or by some other field if not) and filter out any empty values, sort by
 # the age bucket (or age if you didn’t do the bucketing), and return a row count.
